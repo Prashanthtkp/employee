@@ -29,8 +29,14 @@ jobs:
         run: |
           git config --global user.email "nayakvnitha413@gmail.com"
           git config --global user.name "Vinitha-Nayak"
+
+          # This finds the file regardless of where it is and updates it
+          FILE_PATH=$(find . -name "frontend-rollout.yaml")
+          echo "Updating file at: $FILE_PATH"
+
           # Updating the manifest with the new Docker Hub image path
-          sed -i "s|image:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/my-app:${{ github.sha }}|g" k8s/frontend/frontend-rollout.yaml          
-          git add k8s/frontend/frontend-rollout.yaml
+          sed -i "s|image:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/my-app:${{ github.sha }}|g" "$FILE_PATH"         
+          
+          git add "$FILE_PATH"
           git commit -m "Bump image to ${{ github.sha }}"
           git push
