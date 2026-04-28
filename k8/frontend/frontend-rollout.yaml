@@ -21,6 +21,9 @@ spec:
     canary:
       stableService: frontend
       canaryService: frontend-canary
+    analysis:
+      templates:
+        - templateName: success-rate-check
       trafficRouting:
         nginx:
           stableIngress: emp-ingress
