@@ -13,7 +13,7 @@ spec:
       provider:
         prometheus:
           # This URL points to the Prometheus service we just installed
-          address: http://kube-prom-prometheus.monitoring.svc.cluster.local:9090
+          address: http://kube-prom-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090
           query: |
             sum(rate(nginx_ingress_controller_requests{ingress="emp-ingress", status=~"2.*"}[1m])) 
             / 
