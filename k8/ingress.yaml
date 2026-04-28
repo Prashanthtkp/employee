@@ -12,13 +12,13 @@ spec:
   - host: myapp.com
     http:
       paths:
-      - path: /employee
-        pathType: Prefix
-        backend:
-          service:
-            name: backend-service
-            port:
-              number: 8080
+      # - path: /employee
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: backend-service
+      #       port:
+      #         number: 8080
       - path: /
         pathType: Prefix
         backend:
