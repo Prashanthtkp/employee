@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: vinithaaws/my-app:e5c659af95b6c7b847c811ecbb7256cf9f9d83e3
+        image: tkprashanthcrg/my-app:db60629a4663e28642d55b18222526943501572d
         ports:
         - containerPort: 3000
   strategy:
