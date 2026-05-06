@@ -29,8 +29,8 @@ jobs:
 
       - name: Update GitOps Repo
         run: |
-          git config --global user.email "nayakvnitha413@gmail.com"
-          git config --global user.name "Vinitha-Nayak"
+          git config --global user.email "tkprashanth@datatemplate.com"
+          git config --global user.name "Prashanth"
 
           # This finds the file regardless of where it is and updates it
           FILE_PATH=$(find . -name "frontend-rollout.yaml")
